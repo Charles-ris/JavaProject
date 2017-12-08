@@ -32,10 +32,10 @@ public class Main {
         //MatiereImport vImport = new MatiereImport("data/tab-matiere-Tableau 1.csv");
         //ProfilImport vImport = new ProfilImport("data/tab-profils-Tableau 1.csv");
         //RattrapageImport vImport = new RattrapageImport("data/assoc-remplacer-Tableau 1.csv");
-        //NoteImport vImport = new NoteImport("data/tab-notes-Tableau 1.csv");
-        ComposerImport vImport = new ComposerImport("data/assoc-composer-Tableau 1.csv");
+        NoteImport vImport = new NoteImport("data/tab-notes-Tableau 1.csv");
+        //ComposerImport vImport = new ComposerImport("data/assoc-composer-Tableau 1.csv");
 
-        /*
+        /**/
         //Execute Importation
         try {
             p = vImport.buildCVSParser();
@@ -43,8 +43,8 @@ public class Main {
         } catch (IOException e) {
             vImport.getLog().severe(e.getMessage());
         }
-        */
 
+/**
         try{
             File ff=new File("src/fr/ul/exercice/Result.txt"); // définir l'arborescence
             //ff.createNewFile();
@@ -52,7 +52,7 @@ public class Main {
             ffw.write("Test4j,kl");  // écrire une ligne dans le fichier resultat.txt
             ffw.write("\n"); // forcer le passage à la ligne
             ffw.close(); // fermer le fichier à la fin des traitements
-        } catch (Exception e) {}
+        } catch (Exception e) {} */
 
 
     }

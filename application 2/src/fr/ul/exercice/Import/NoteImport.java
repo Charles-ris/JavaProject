@@ -76,7 +76,7 @@ public class NoteImport {
                 +" VALUES(?,?,?,?,?,?)";
         try {
             ps = DBManager.CONNECTION.prepareStatement(sql);
-            ps.setString(1,idE);
+            ps.setString(1,idC);
             ps.setString(2, idE);
             ps.setString(3, lE);
             ps.setString(4, idM);

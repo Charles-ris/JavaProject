@@ -54,33 +54,38 @@ public class NoteExtract {
 
     public void run(String serie, String g){
         DBManager.connect();
+        File ff=new File("src/fr/ul/exercice/Result.csv");
         //CODE
         //Extraire les notes au premier tour pour les étudiants d’une série
         String sql = "";
         PreparedStatement ps = null;
-        sql = "SELECT note, idCandidat, idEpreuve FROM Note natural join Candidat WHERE"
-                +"serie = ? AND idEpreuve in (Select idEpreuve FROM Groupe WHERE groupe = ?)";
+        sql = "SELECT note, idCandidat, idEpreuve FROM Note natural join Candidat WHERE serie=? AND idEpreuve in (Select idEpreuve FROM Groupe WHERE groupe = ?) ORDER BY idCandidat";
         try {
             ps = DBManager.CONNECTION.prepareStatement(sql);
             ps.setString(1,serie);
             ps.setString(2,g);
-
             ResultSet rs = ps.executeQuery();
-
+            FileWriter ffw= null;
+            ffw = new FileWriter(ff);
+            ffw.write("idCandidat;idEpreuve;Note\n");
             while (rs.next()) {
-
-                String note = rs.getString("note");
-                String candidat = rs.getString("idCandidat");
-                String epreuve = rs.getString("idEpreuve");
-                System.out.println("Candidat : "+candidat+" epreuve : "+ epreuve +" note : "+ note);
-                System.out.println("");
+                String idc = rs.getString("idCandidat");
+                String ide = rs.getString("idEpreuve");
+                String no = rs.getString("note");
+                //System.out.println("Candidat : "+candidat+" epreuve : "+ epreuve +" note : "+ note);
+                //System.out.println("");
 
                 //ECRIRE RESULATS DANS FICHIER
 
+
+                    ffw.write(idc+";"+ide+";"+no+"\n");  // écrire une ligne dans le fichier result.csv
             }
+            ffw.close(); // fermer le fichier à la fin des traitements
 
         } catch (SQLException e) {
             LOG.warning(e.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
 
@@ -131,7 +136,7 @@ public class NoteExtract {
                         while (rs.next()) {
                             String epreuve = rs.getString("idEpreuve");
                             String coeff = rs.getString("coeff");
-                            System.out.println(epreuve+"  "+coeff);
+                            //System.out.println(epreuve+"  "+coeff);
 
                             //ECRIRE RESULATS DANS FICHIER
 
