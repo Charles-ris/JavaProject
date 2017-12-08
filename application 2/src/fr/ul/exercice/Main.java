@@ -3,6 +3,8 @@ package fr.ul.exercice;
 import fr.ul.exercice.Import.*;
 import org.apache.commons.csv.CSVParser;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 /**
@@ -33,6 +35,7 @@ public class Main {
         //NoteImport vImport = new NoteImport("data/tab-notes-Tableau 1.csv");
         ComposerImport vImport = new ComposerImport("data/assoc-composer-Tableau 1.csv");
 
+        /*
         //Execute Importation
         try {
             p = vImport.buildCVSParser();
@@ -40,6 +43,17 @@ public class Main {
         } catch (IOException e) {
             vImport.getLog().severe(e.getMessage());
         }
+        */
+
+        try{
+            File ff=new File("src/fr/ul/exercice/Result.txt"); // définir l'arborescence
+            //ff.createNewFile();
+            FileWriter ffw=new FileWriter(ff);
+            ffw.write("Test4j,kl");  // écrire une ligne dans le fichier resultat.txt
+            ffw.write("\n"); // forcer le passage à la ligne
+            ffw.close(); // fermer le fichier à la fin des traitements
+        } catch (Exception e) {}
+
 
     }
 }

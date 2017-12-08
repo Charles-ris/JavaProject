@@ -50,7 +50,11 @@ public class CoefficientExtract {
         this.filename = filename;
     }
 
-    public void run(String se, String men, String spe, String sec){
+    public void run(String se, String men, String spe, String sec) {
+        File ff=new File("src/fr/ul/exercice/Result.csv");
+
+
+
         DBManager.connect();
         String sql = "";
         PreparedStatement ps = null;
@@ -63,18 +67,24 @@ public class CoefficientExtract {
             ps.setString(4,sec);
 
             ResultSet rs = ps.executeQuery();
-
+            FileWriter ffw= null;
+            ffw = new FileWriter(ff);
+            ffw.write("idEpreuve;Coefficient\n");
             while (rs.next()) {
-                String e = rs.getString("idEpreuve");
+                String ide = rs.getString("idEpreuve");
                 String coef = rs.getString("coefficient");
-                System.out.print(e+" ");
+                System.out.print(ide+" ");
                 System.out.println(coef);
 
-                //ECRIRE FIN
+                ffw.write(ide+";"+coef+"\n");  // écrire une ligne dans le fichier result.csv
             }
+            ffw.close(); // fermer le fichier à la fin des traitements
         }catch (SQLException e) {
             LOG.warning(e.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
 
         DBManager.quit();
     }

@@ -1,0 +1,27 @@
+idEpreuve : 001   coefficient : 2
+idEpreuve : 002   coefficient : 2
+idEpreuve : 003   coefficient : 3
+idEpreuve : 004   coefficient : 7
+idEpreuve : 005   coefficient : 6
+idEpreuve : 005A   coefficient : 4
+idEpreuve : 005B   coefficient : 1
+idEpreuve : 006-1   coefficient : 7
+idEpreuve : 006A-1   coefficient : 5
+idEpreuve : 006B   coefficient : 2
+idEpreuve : 007   coefficient : 3
+idEpreuve : 007A   coefficient : 1
+idEpreuve : 007B   coefficient : 1
+idEpreuve : 007BA   coefficient : 1
+idEpreuve : 007BB   coefficient : 1
+idEpreuve : 008   coefficient : 2
+idEpreuve : 008A   coefficient : 1
+idEpreuve : 008B   coefficient : 1
+idEpreuve : 008BA   coefficient : 1
+idEpreuve : 008BB   coefficient : 1
+idEpreuve : 008C   coefficient : 1
+idEpreuve : 009   coefficient : 3
+idEpreuve : 010   coefficient : 2
+idEpreuve : 011-1   coefficient : 2
+idEpreuve : 017   coefficient : 
+idEpreuve : 204   coefficient : 7
+idEpreuve : 205   coefficient : 6
