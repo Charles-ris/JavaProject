@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--Documentation d'un projet-->
+<!--auteur: Azim Roussanaly-->
+<!--(c) Université de Lorraine 2017-->
+<html>
+<head>
+<title>Titre du projet</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="man-page.css">
+</head>
+<body>
+	<!--En-tete -->
+	<header>
+		<img src="img/lorraine.png" alt="logo LORIA">
+		<h1>Guide d'utilisation</h1>
+	</header>
+	<div class="main">
+		<!--Menu -->
+		<nav class="nav">
+			<div class="navitem">
+				<a href="index.html">Accueil</a>
+			</div>
+			<div class="navitem">
+				<a href="install.html">Installation</a>
+			</div>
+			<div class="navitem">
+				<a href="guide.html">Utilisation</a>
+			</div>
+			<div class="navitem">
+				<a href="dev.html">Développement</a>
+			</div>
+			<div class="navitem">
+				<a href="licence.html">Licence</a>
+			</div>
+		</nav>
+
+		<!-- Corps -->
+		<article class="article">
+			<p>Le dossier /<em>bin</em> contient plusieurs scripts pour tester sur différentes plateformes.
+			Ces scripts peuvent ête aussi adaptés à vos propres besoins.
+
+			<h2>Test</h2>
+			<pre class="input">
+%cd &lt;install directory&gt;
+%cd bin
+%./test.sh 
+			</pre>
+			
+			<h2>La ligne de commandes</h2>
+			<p> Les arguments sont au standard POSIX :</p>
+			<ul>
+				<li>-o (ou --output) &lt;fichier .csv des résultats&gt;</li>		
+			</ul>
+			<h2>Format des fichiers</h2>
+			<h2>Les résultats</h2>
+			<p>Les résultats de l'évaluation sont stockés ...</p>
+			
+		</article>
+	</div>
+	<!-- Pied de page -->
+	<footer>
+		<table>
+			<tr>
+				<td>Université de Lorraine, Nancy France, 2017</td>
+				<td>Contact : <a href="mailto:azim.roussanaly@loria.fr">Azim
+						Roussanaly</a>
+				</td>
+			</tr>
+		</table>
+	</footer>
+</body>
+</html>

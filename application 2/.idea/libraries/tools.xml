@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="tools">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/tools/ant-launcher.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tools/ant.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

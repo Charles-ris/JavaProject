@@ -1,0 +1,41 @@
+public int updateDB(CSVParser parser) {
+        int res = 0;
+        DBManager.connect();
+        for (CSVRecord item : parser) {
+            String serie = item.get(0).trim();
+            String mention = item.get(1).trim();
+            String specialite = item.get(2).trim();
+            String option = item.get(3).trim();
+            String code = item.get(4).trim();
+            String libelle = item.get(5).trim();
+            String coeff = item.get(6).trim();
+            String composition = item.get(7).trim();
+            String bonus = item.get(8).trim();
+            String facult = item.get(9).trim();
+
+            String sql = "";
+            PreparedStatement ps = null;
+            sql = "Select idProfil FROM Profil WHERE serie = ? AND mention = ? AND specialite = ?  AND sect= ?";
+            try {
+                ps = DBManager.CONNECTION.prepareStatement(sql);
+                ps.setString(1,serie);
+                ps.setString(2, mention);
+                ps.setString(3, specialite);
+                ps.setString(4, option);
+                LOG.info(ps.toString());
+                ResultSet t =  ps.executeQuery();
+                if(t.first()){
+                    String idP = t.getString(1);
+                    if (add(idP,code,libelle,coeff,composition,bonus,facult)){
+                      res++;
+                    }
+                }
+
+            } catch (SQLException e) {
+                LOG.warning(e.getMessage());
+            }
+
+        }
+        DBManager.quit();
+        return res;
+    }
